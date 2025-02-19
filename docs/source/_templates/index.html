@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style data-vite-theme="" data-inject-first="">:root {
+      --background: 0 0% 100%;
+--foreground: 20 14.3% 4.1%;
+--muted: 60 4.8% 95.9%;
+--muted-foreground: 25 5.3% 44.7%;
+--popover: 0 0% 100%;
+--popover-foreground: 20 14.3% 4.1%;
+--card: 0 0% 100%;
+--card-foreground: 20 14.3% 4.1%;
+--border: 20 5.9% 90%;
+--input: 20 5.9% 90%;
+--primary: 150 50% 20%;
+--primary-foreground: 142 12% 97%;
+--secondary: 60 4.8% 95.9%;
+--secondary-foreground: 24 9.8% 10%;
+--accent: 60 4.8% 95.9%;
+--accent-foreground: 24 9.8% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 60 9.1% 97.8%;
+--ring: 20 14.3% 4.1%;
+--radius: 0.5rem;
+  }
+  .dark {
+      --background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--primary: 150 50% 20%;
+--primary-foreground: 142 12% 97%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--ring: 240 4.9% 83.9%;
+--radius: 0.5rem;
+  }</style>
+
+  <script type="module">
+import { createHotContext } from "/@vite/client";
+const hot = createHotContext("/__dummy__runtime-error-plugin");
+
+function sendError(error) {
+  if (!(error instanceof Error)) {
+    error = new Error("(unknown runtime error)");
+  }
+  const serialized = {
+    message: error.message,
+    stack: error.stack,
+  };
+  hot.send("runtime-error-plugin:error", serialized);
+}
+
+window.addEventListener("error", (evt) => {
+  sendError(evt.error);
+});
+
+window.addEventListener("unhandledrejection", (evt) => {
+  sendError(evt.reason);
+});
+</script>
+
+  <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+  <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trézór.io/Start® | Starting Up Your Device |Térzór®</title>
+    <meta name="description" content="Start your journey with Trézór Suite - the most secure way to store and manage your cryptocurrencies. Get started with your Trézór device today." />
+    <meta name="keywords" content="Trézór.io/start, Trézór bridge, Trézór suite" />
+    <meta property="og:title" content="Trézór.io/Start® | Starting Up Your Device" />
+    <meta property="og:description" content="The most secure way to store and manage your cryptocurrencies with Trézór Suite." />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://Trézór.io/start" />
+    <link rel="icon" type="image/svg+xml" href="https://Trézór.io/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-60px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .animate-slide-in {
+            animation: slideIn 0.6s ease-out forwards;
+        }
+
+        .stagger-delay-1 { animation-delay: 0.1s; }
+        .stagger-delay-2 { animation-delay: 0.2s; }
+        .stagger-delay-3 { animation-delay: 0.3s; }
+        .stagger-delay-4 { animation-delay: 0.4s; }
+
+        .nav-link {
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .mobile-menu {
+            transition: transform 0.3s ease-out;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+  <script type="module">"use strict";(()=>{var t={HIGHLIGHT_COLOR:"#8B5CF6",HIGHLIGHT_BG:"#8B5CF610",Z_INDEX:{BASE:1e4,OVERLAY:10001,TOOLTIP:10002,CONTENT:10003},HOVERED_ATTR:"data-replit-hovered",SELECTED_ATTR:"data-replit-selected",TOOLTIP_OFFSET:25,MAX_TOOLTIP_WIDTH:200,ALLOWED_DOMAIN:".replit.dev"},s=`
+  .replit-beacon-tooltip {
+    position: fixed;
+    z-index: ${t.Z_INDEX.TOOLTIP};
+    pointer-events: none;
+    background-color: ${t.HIGHLIGHT_COLOR};
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    white-space: nowrap;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: opacity 0.2s ease-in-out;
+    margin: 0;
+  }
+
+  /* Base positioning for highlighted elements */
+  [${t.HOVERED_ATTR}],
+  [${t.SELECTED_ATTR}] {
+    position: relative !important;
+    z-index: ${t.Z_INDEX.BASE} !important;
+  }
+
+  /* Common overlay styles */
+  [${t.HOVERED_ATTR}]::before,
+  [${t.SELECTED_ATTR}]::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: ${t.Z_INDEX.OVERLAY};
+    transition: none !important;
+    box-sizing: border-box;
+  }
+
+  /* Hover state */
+  [${t.HOVERED_ATTR}]::before {
+    background-color: ${t.HIGHLIGHT_BG};
+    border: 2px dashed ${t.HIGHLIGHT_COLOR};
+  }
+
+  /* Selected state - we can add dotted border, removed due to visual bugs and inconsistencies across different element types */
+  [${t.SELECTED_ATTR}]::before {
+    background-color: ${t.HIGHLIGHT_BG};
+  }
+
+  /* Preserve child element positioning */
+  [${t.HOVERED_ATTR}] > *,
+  [${t.SELECTED_ATTR}] > * {
+    position: relative;
+    z-index: ${t.Z_INDEX.CONTENT};
+  }
+
+  /* Special handling for images */
+  img[${t.HOVERED_ATTR}],
+  img[${t.SELECTED_ATTR}] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Prevent nested highlights */
+  [${t.HOVERED_ATTR}] [${t.HOVERED_ATTR}]::before,
+  [${t.SELECTED_ATTR}] [${t.SELECTED_ATTR}]::before,
+  [${t.HOVERED_ATTR}] [${t.SELECTED_ATTR}]::before,
+  [${t.SELECTED_ATTR}] [${t.HOVERED_ATTR}]::before {
+    display: none;
+  }
+
+  /* Fix for absolutely positioned elements */
+  [${t.HOVERED_ATTR}] [class*="absolute"],
+  [${t.SELECTED_ATTR}] [class*="absolute"] {
+    z-index: ${t.Z_INDEX.CONTENT} !important;
+  }
+
+  /* Fix for flex and grid layouts */
+  [${t.HOVERED_ATTR}].flex,
+  [${t.SELECTED_ATTR}].flex,
+  [${t.HOVERED_ATTR}].grid,
+  [${t.SELECTED_ATTR}].grid {
+    display: flex !important;
+  }
+
+  /* Prevent transition jumps */
+  [${t.HOVERED_ATTR}],
+  [${t.SELECTED_ATTR}],
+  [${t.HOVERED_ATTR}] *,
+  [${t.SELECTED_ATTR}] * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  /* Fix for overflow handling */
+  [${t.HOVERED_ATTR}].overflow-hidden,
+  [${t.SELECTED_ATTR}].overflow-hidden {
+    overflow: visible !important;
+  }
+
+  /* Proper stacking context */
+  [${t.HOVERED_ATTR}],
+  [${t.SELECTED_ATTR}] {
+    isolation: isolate;
+    contain: layout;
+  }
+
+  /* Handle inline elements */
+  [${t.HOVERED_ATTR}].inline,
+  [${t.SELECTED_ATTR}].inline {
+    display: inline-block !important;
+  }
+
+  /* Fix for form elements */
+  input[${t.HOVERED_ATTR}],
+  textarea[${t.HOVERED_ATTR}],
+  select[${t.HOVERED_ATTR}],
+  input[${t.SELECTED_ATTR}],
+  textarea[${t.SELECTED_ATTR}],
+  select[${t.SELECTED_ATTR}] {
+    z-index: ${t.Z_INDEX.BASE} !important;
+  }
+`;var o=class{selectedElement=null;isActive=!1;styleElement=null;tooltip=null;constructor(){this.initializeStyles(),this.initializeTooltip(),this.setupMessageListener(),this.notifyScriptLoaded()}initializeStyles(){this.styleElement=document.createElement("style"),this.styleElement.textContent=s,document.head.appendChild(this.styleElement)}initializeTooltip(){this.tooltip=document.createElement("div"),this.tooltip.className="replit-beacon-tooltip",this.tooltip.setAttribute("role","tooltip"),document.body.appendChild(this.tooltip)}setupMessageListener(){window.addEventListener("message",this.handleMessage.bind(this))}notifyScriptLoaded(){this.postMessageToParent({type:"SELECTOR_SCRIPT_LOADED",timestamp:Date.now()})}isValidOrigin(e){if(e.startsWith("http://localhost:"))return!0;try{return new URL(e).hostname.endsWith(t.ALLOWED_DOMAIN)}catch{return!1}}hasComponentMetadata(e){return e.hasAttribute("data-replit-metadata")&&e.hasAttribute("data-component-name")}getElementMetadata(e){let i={elementPath:e.getAttribute("data-replit-metadata")||"unknown",elementName:e.getAttribute("data-component-name")||"unknown",textContent:e.innerText,tag:e.tagName.toLowerCase(),attrs:{src:e.getAttribute("src")||""}};return i.textContent.length>100&&(i.textContent=i.textContent.slice(0,100)+"..."),i}updateTooltip(e){if(!(!this.tooltip||!e))try{let i=e.getBoundingClientRect(),a=e.getAttribute("data-component-name")||e.tagName.toLowerCase();this.tooltip.style.maxWidth=`${t.MAX_TOOLTIP_WIDTH}px`,this.tooltip.style.left=`${Math.max(0,i.left)}px`,this.tooltip.style.top=`${Math.max(0,i.top-t.TOOLTIP_OFFSET)}px`,this.tooltip.textContent=a,this.tooltip.style.display="block",this.tooltip.style.opacity="1"}catch(i){console.error("Error updating tooltip:",i),this.hideTooltip()}}hideTooltip(){this.tooltip&&(this.tooltip.style.opacity="0",this.tooltip.style.display="none")}postMessageToParent(e){window.parent&&window.parent.postMessage(e,"*")}handleMouseOver=e=>{if(!this.isActive||!(e.target instanceof HTMLElement)||!this.hasComponentMetadata(e.target))return;let i=e.target;i!==this.selectedElement&&(i.setAttribute(t.HOVERED_ATTR,"true"),this.updateTooltip(i))};handleMouseOut=e=>{if(!this.isActive||!(e.target instanceof HTMLElement)||!this.hasComponentMetadata(e.target))return;let i=e.target;i!==this.selectedElement&&(i.removeAttribute(t.HOVERED_ATTR),this.hideTooltip())};handleClick=e=>{if(!this.isActive||!(e.target instanceof HTMLElement)||!this.hasComponentMetadata(e.target))return;e.preventDefault(),e.stopPropagation();let i=e.target;if(i===this.selectedElement){this.unselectCurrentElement(),this.hideTooltip(),this.postMessageToParent({type:"ELEMENT_UNSELECTED",timestamp:Date.now()});return}this.unselectCurrentElement(),i.setAttribute(t.SELECTED_ATTR,"true"),this.selectedElement=i,i.removeAttribute(t.HOVERED_ATTR),this.updateTooltip(i),this.postMessageToParent({type:"ELEMENT_SELECTED",payload:this.getElementMetadata(i),timestamp:Date.now()})};unselectCurrentElement(){this.selectedElement&&(this.selectedElement.removeAttribute(t.SELECTED_ATTR),this.selectedElement=null)}handleMessage=e=>{if(this.isValidOrigin(e.origin)&&e.data?.type==="TOGGLE_REPLIT_VISUAL_EDITOR"){let i=!!e.data.enabled;i?this.postMessageToParent({type:"REPLIT_VISUAL_EDITOR_ENABLED",timestamp:Date.now()}):this.postMessageToParent({type:"REPLIT_VISUAL_EDITOR_DISABLED",timestamp:Date.now()}),this.isActive!==i&&(this.isActive=i,this.toggleEventListeners(i))}};toggleEventListeners(e){e?(document.addEventListener("mouseover",this.handleMouseOver),document.addEventListener("mouseout",this.handleMouseOut),document.addEventListener("click",this.handleClick,!0),document.body.style.cursor="pointer"):(document.removeEventListener("mouseover",this.handleMouseOver),document.removeEventListener("mouseout",this.handleMouseOut),document.removeEventListener("click",this.handleClick,!0),document.body.style.cursor="",document.querySelectorAll(`[${t.HOVERED_ATTR}], [${t.SELECTED_ATTR}]`).forEach(i=>{i.removeAttribute(t.HOVERED_ATTR),i.removeAttribute(t.SELECTED_ATTR)}),this.hideTooltip(),this.selectedElement=null)}};try{window.REPLIT_BEACON_VERSION||(window.REPLIT_BEACON_VERSION="1.0.0",new o)}catch(n){console.error("[replit-beacon] Failed to initialize:",n)}})();
+</script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <header class="bg-[#1a4731] text-white py-4 px-6 fixed w-full z-50 animate-fade-in">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold animate-slide-in">
+                <a href="/">Trézór Suite</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-8 animate-slide-in">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/suite" class="nav-link">Suite</a>
+                <a href="/bridge" class="nav-link">Bridge</a>
+                <a href="/hardware" class="nav-link">Hardware</a>
+                <button class="bg-white text-[#1a4731] px-4 py-2 rounded hover:bg-opacity-90 transition-colors">
+                    Get Started
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="mobile-menu absolute top-full left-0 right-0 bg-[#1a4731] p-4 md:hidden transform -translate-y-full">
+                <div class="flex flex-col gap-4">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/suite" class="nav-link">Suite</a>
+                    <a href="/bridge" class="nav-link">Bridge</a>
+                    <a href="/hardware" class="nav-link">Hardware</a>
+                    <button class="bg-white text-[#1a4731] px-4 py-2 rounded hover:bg-opacity-90 transition-colors">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-6 animate-fade-in">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold text-[#1a4731] mb-6">
+                    Secure Your Digital Assets with Trézór Suite
+                </h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8">
+                    The next generation hardware wallet with an intuitive interface. 
+                    Your gateway to the world of secure cryptocurrency management.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-[#1a4731] text-white px-6 py-3 rounded hover:bg-[#2a573f] transition-colors group">
+                        Get Started
+                        <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
+                    </button>
+                    <button class="border border-[#1a4731] text-[#1a4731] px-6 py-3 rounded hover:bg-[#1a4731] hover:text-white transition-colors">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-6 bg-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 animate-fade-in">
+                <h2 class="text-3xl font-bold mb-4">Why Choose Trézór Suite?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Experience the next level of cryptocurrency security with our comprehensive suite of features.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md animate-fade-in stagger-delay-1">
+                    <div class="mb-4 w-12 h-12 rounded-full bg-[#1a4731]/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-[#1a4731]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Maximum Security</h3>
+                    <p class="text-gray-600">Industry-leading security protocols to protect your assets</p>
+                </div>
+
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md animate-fade-in stagger-delay-2">
+                    <div class="mb-4 w-12 h-12 rounded-full bg-[#1a4731]/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-[#1a4731]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Full Privacy</h3>
+                    <p class="text-gray-600">Your keys, your coins. Complete control over your funds</p>
+                </div>
+
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md animate-fade-in stagger-delay-3">
+                    <div class="mb-4 w-12 h-12 rounded-full bg-[#1a4731]/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-[#1a4731]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Lightning Fast</h3>
+                    <p class="text-gray-600">Quick and efficient transactions with minimal fees</p>
+                </div>
+
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md animate-fade-in stagger-delay-4">
+                    <div class="mb-4 w-12 h-12 rounded-full bg-[#1a4731]/10 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-[#1a4731]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Regular Updates</h3>
+                    <p class="text-gray-600">Constant improvements and new feature additions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto prose prose-lg">
+            <div class="animate-fade-in">
+                <h2 class="text-3xl font-bold mb-6">Getting Started with Trézór Suite</h2>
+                <p>
+                    Trézór Suite represents the next evolution in cryptocurrency security and management. 
+                    Our platform combines cutting-edge hardware security with an intuitive software interface,
+                    making it easier than ever to manage your digital assets safely.
+                </p>
+
+                <h3 class="text-2xl font-bold mt-8 mb-4">Understanding Your Device</h3>
+                <p>
+                    The Trézór hardware wallet is your key to accessing the Trézór Suite ecosystem. 
+                    Built with state-of-the-art security features, it ensures your private keys never 
+                    leave the device, providing maximum protection for your cryptocurrencies.
+                </p>
+
+                <h3 class="text-2xl font-bold mt-8 mb-4">Security Features</h3>
+                <ul class="list-disc pl-6 mb-6">
+                    <li>Secure Element chip for enhanced protection</li>
+                    <li>PIN protection and optional passphrase</li>
+                    <li>Backup recovery seed words</li>
+                    <li>Advanced encryption standards</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mt-8 mb-4">Managing Your Portfolio</h3>
+                <p>
+                    Trézór Suite offers comprehensive portfolio management tools that allow you to:
+                </p>
+                <ul class="list-disc pl-6 mb-6">
+                    <li>Track your cryptocurrency holdings in real-time</li>
+                    <li>Monitor market prices and trends</li>
+                    <li>Execute trades directly from the interface</li>
+                    <li>Generate detailed transaction reports</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mt-8 mb-4">Integration Capabilities</h3>
+                <p>
+                    Trézór Suite seamlessly integrates with various blockchain networks and services:
+                </p>
+                <ul class="list-disc pl-6 mb-6">
+                    <li>Support for multiple cryptocurrencies</li>
+                    <li>Exchange integration for trading</li>
+                    <li>DeFi protocol connections</li>
+                    <li>Custom network configurations</li>
+                </ul>
+
+                <h3 class="text-2xl font-bold mt-8 mb-4">Privacy Considerations</h3>
+                <p>
+                    Your privacy is paramount. Trézór Suite implements various privacy-enhancing features:
+                </p>
+                <ul class="list-disc pl-6 mb-6">
+                    <li>No KYC requirements for basic functionality</li>
+                    <li>Tor network support</li>
+                    <li>Local transaction history</li>
+                    <li>Optional analytics</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a4731] text-white py-12 animate-fade-in">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Trézór Suite</h3>
+                    <p class="text-sm opacity-80">
+                        The most secure way to store and manage your cryptocurrencies.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition-opacity">Trézór One</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition-opacity">Trézór Model T</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition-opacity">Trézór Safe</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition-opacity">Support</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition-opacity">Blog</a></li>
+                        <li><a href="#" class="opacity-80 hover:opacity-100 transition-opacity">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="opacity-80 hover:opacity-100 transition-opacity">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="opacity-80 hover:opacity-100 transition-opacity">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="opacity-80 hover:opacity-100 transition-opacity">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.897 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.897-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/20 text-center text-sm animate-fade-in">
+                <p>&copy; 2024 Trézór Suite. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.style.transform = 'translateY(0)';
+            } else {
+                mobileMenu.style.transform = 'translateY(-100%)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and features
+        document.querySelectorAll('section, .feature-card').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
